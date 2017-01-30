@@ -4,3 +4,4 @@ node_modules
 app/vendor
 npm-debug.log
 .firebaserc
+.vscode
