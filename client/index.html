@@ -7,25 +7,44 @@
 	<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
 	<link rel="stylesheet" type="text/css" href="css/main.css" />
 </head>
-<body ng-app="MyApp">
-	<div class="wrapper">
-	<form>
-		<md-input-container>
-			<label for="firstName"></label>
-			<input type="text" name="firstName" value="">
-		</md-input-container>
-		<md-datepicker ng-model="fecha_in" md-placeholder="Seleccionar" name="fecha_in" type="text" id="fecha_in" value="<?php echo $_GET['fecha_in']; ?>" ></md-datepicker>
-	</form>				
+<body ng-app="MyApp" ng-cloak>
+	<div class="wrapper" ng-controller="AppCtrl">
+		<div >
+		<form type="get" action="index.html">
+			<md-input-container layout="row">
+				<label for="firstName">Nombre</label>
+				<input  type="text" 
+						ng-model="firstName" 
+						name="firstName" 
+						value="">
+			</md-input-container>
+			<md-input-container layout="row">
+				<label for="lastName">Apellido</label>
+				<input  type="text"
+						ng-model="lastName" 
+						name="lastName" 
+						value="">
+			</md-input-container>
+			<md-datepicker  id="calendar"
+							name="calendar" 
+							ng-model="calendar" 
+							layout="row"
+							md-min-date="minDate"
+							md-max-date="maxDate"
+							type="date"></md-datepicker>
+			<input type="hidden" name="date" value="{{calendar}}">
+			<p>{{calendar}}</p>
+			<md-button layout="row" type="submit" md-no-ink class="md-primary">Submit</md-button>
+		</form>				
+		</div>
 	</div>
-
-	<script type="text/javascript" src="app/app.js" ></script>
 	<!-- Angular Material requires Angular.js Libraries -->
 	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
 	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js"></script>
 	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js"></script>
 	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-messages.min.js"></script>
 	<script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
-	<!-- Your application bootstrap  -->
 
+	<script type="text/javascript" src="js/app.js" ></script>
 </body>
 </html>
