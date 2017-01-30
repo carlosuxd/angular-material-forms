@@ -1,20 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Initial Layout</title>
+	<title>Angular Material</title>
 	<link href="https://fonts.googleapis.com/css?family=Roboto+Mono:300" rel="stylesheet">
+	<meta name="viewport" content="width=device-width, initial-scale=1">	
+	<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
 	<link rel="stylesheet" type="text/css" href="css/main.css" />
 </head>
-<body>
-
+<body ng-app="MyApp">
 	<div class="wrapper">
-		<div class="content">
-			<span class="welcome"></span>
-		</div>		
+	<form>
+		<md-input-container>
+			<label for="firstName"></label>
+			<input type="text" name="firstName" value="">
+		</md-input-container>
+		<md-datepicker ng-model="fecha_in" md-placeholder="Seleccionar" name="fecha_in" type="text" id="fecha_in" value="<?php echo $_GET['fecha_in']; ?>" ></md-datepicker>
+	</form>				
 	</div>
 
-	<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/1.1.4/typed.min.js" ></script>
-	<script type="text/javascript" src="app/bundle.js" ></script>
+	<script type="text/javascript" src="app/app.js" ></script>
+	<!-- Angular Material requires Angular.js Libraries -->
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-messages.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
+	<!-- Your application bootstrap  -->
+
 </body>
 </html>
